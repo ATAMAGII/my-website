@@ -1,0 +1,101 @@
+/*// BASE STYLES //*/
+
+html, body{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.grass, .sky, .road{
+  position: relative;
+} 
+
+.sky{
+  height: 40%;
+  background-color: skyblue;
+}
+
+.grass{
+  height: 30%;
+  background: seagreen;
+}
+
+.road{
+  height: 30%;
+  background: dimgrey;
+  box-sizing: border-box;
+  border-top: 10px solid grey;
+  border-bottom: 10px solid grey;
+  width: 100%;
+}
+
+.lines{
+  box-sizing: border-box;
+  border: 5px dashed #fff;
+  height: 8px;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+}
+
+/*// ELEMENT TO ANIMATE //*/
+
+.mario{
+  position: absolute;
+  top: -40px;
+  left: 0px;
+  animation-name: drive;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  width: 300px;
+  height: 100px;
+}
+
+.luigi{
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  animation-name: drive;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-direction: linear;
+  width: 300px;
+  height: 100px;
+}
+
+.cloud{
+  position: absolute;
+}
+
+.cloud:nth-child(1){ top: 10px; width: 200px; animation: wind 80s linear infinite; }
+.cloud:nth-child(2){ top: 40px; width: 300px; animation: wind 50s linear infinite; animation-delay: -10s; }
+.cloud:nth-child(3){ top: 70px; width: 150px; animation: wind 60s linear infinite; animation-delay: -20s; }
+.cloud:nth-child(4){ top: 100px; width: 250px; animation: wind 70s linear infinite; animation-delay: -30s; }
+.cloud:nth-child(5){ top: 20px; width: 180px; animation: wind 55s linear infinite; animation-delay: -5s; }
+.cloud:nth-child(6){ top: 50px; width: 220px; animation: wind 65s linear infinite; animation-delay: -15s; }
+.cloud:nth-child(7){ top: 80px; width: 170px; animation: wind 75s linear infinite; animation-delay: -25s; }
+.cloud:nth-child(8){ top: 110px; width: 280px; animation: wind 45s linear infinite; animation-delay: -35s; }
+.cloud:nth-child(9){ top: 15px; width: 190px; animation: wind 85s linear infinite; animation-delay: -8s; }
+.cloud:nth-child(10){ top: 45px; width: 260px; animation: wind 52s linear infinite; animation-delay: -18s; }
+.cloud:nth-child(11){ top: 75px; width: 160px; animation: wind 68s linear infinite; animation-delay: -28s; }
+.cloud:nth-child(12){ top: 105px; width: 240px; animation: wind 78s linear infinite; animation-delay: -38s; }
+.cloud:nth-child(13){ top: 25px; width: 210px; animation: wind 58s linear infinite; animation-delay: -12s; }
+.cloud:nth-child(14){ top: 55px; width: 230px; animation: wind 48s linear infinite; animation-delay: -22s; }
+.cloud:nth-child(15){ top: 85px; width: 175px; animation: wind 72s linear infinite; animation-delay: -32s; }
+.cloud:nth-child(16){ top: 115px; width: 270px; animation: wind 62s linear infinite; animation-delay: -42s; }
+
+/*// KEYFRAMES //*/ 
+
+@keyframes drive{
+  from{ transform: translate(-200px);}
+  to{transform: translate(1000px);}
+} 
+
+@keyframes wind{
+  from{left: -300px}
+  to{left: 100%}
+}
