@@ -45,11 +45,8 @@ html, body{
   position: absolute;
   top: -40px;
   left: 0px;
-  animation-name: drive;
-  animation-duration: 3s;
-  animation-fill-mode: both;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+ animation: drive 3s both infinite linear, 
+           jump 0.3s 1.2s ease ;
   width: 300px;
   height: 100px;
 }
@@ -71,7 +68,12 @@ html, body{
   position: absolute;
 }
 
-.cloud:nth-child(1){ top: 10px; width: 200px; animation: wind 80s linear infinite; }
+.cloud:nth-child(1){ 
+  top: 10px; 
+  width: 200px; 
+  animation: wind 80s linear infinite; 
+}
+
 .cloud:nth-child(2){ top: 40px; width: 300px; animation: wind 50s linear infinite; animation-delay: -10s; }
 .cloud:nth-child(3){ top: 70px; width: 150px; animation: wind 60s linear infinite; animation-delay: -20s; }
 .cloud:nth-child(4){ top: 100px; width: 250px; animation: wind 70s linear infinite; animation-delay: -30s; }
@@ -98,4 +100,10 @@ html, body{
 @keyframes wind{
   from{left: -300px}
   to{left: 100%}
+}
+
+@keyframes jump{
+  0%{ top: -40px;}
+  50%{ top: -100px;}
+  100%{ top: -40px;}
 }
